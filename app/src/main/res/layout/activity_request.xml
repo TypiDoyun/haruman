@@ -17,20 +17,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/requestActivity_editText_title"
+        android:id="@+id/requestActivity_edittext_title"
         android:layout_width="275dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="제목을 입력해주세요."
+        android:nextFocusDown="@+id/requestActivity_edittext_address"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_textView_title"
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_textview_title"
         app:layout_constraintTop_toBottomOf="@+id/requestActivity_button_upload" />
 
     <TextView
-        android:id="@+id/requestActivity_textView_title"
+        android:id="@+id/requestActivity_textview_title"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
@@ -41,274 +42,235 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/requestActivity_editText_address"
+        android:id="@+id/requestActivity_edittext_address"
         android:layout_width="275dp"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="아르바이트 주소를 입력해주세요."
+        android:nextFocusDown="@+id/requestActivity_edittext_age"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/requestActivity_editText_title"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_title"
+        app:layout_constraintEnd_toEndOf="@+id/requestActivity_edittext_title"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_title"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/requestActivity_textView_address"
+        android:id="@+id/requestActivity_textview_address"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="24dp"
         android:text="주소"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_textView_title"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textView_title" />
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_title"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_title" />
 
-    <EditText
-        android:id="@+id/requestActivity_editText_date_front_year"
-        android:layout_width="96dp"
+    <Button
+        android:id="@+id/requestActivity_front_datePicker"
+        android:layout_width="104dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
+        android:text="날짜 지정"
+        android:onClick="OnClickHandler_Front"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_date_front"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_date_front" />
+
+    <Button
+        android:id="@+id/requestActivity_back_datePicker"
+        android:layout_width="104dp"
+        android:layout_height="48dp"
+        android:text="날짜 지정"
+        android:onClick="OnClickHandler_Front"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_date_back"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_front_datePicker" />
+
+    <TextView
+        android:id="@+id/requestActivity_edittext_date_front"
+        android:layout_width="104dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="22dp"
         android:ems="10"
-        android:gravity="right"
-        android:hint="0000"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_textView_date_front"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_age" />
+        android:gravity="center_horizontal"
+        android:text="yyyy-mm-dd"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_age"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_age" />
 
     <TextView
-        android:id="@+id/requestActivity_textView_date_front_month"
-        android:layout_width="20dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="52dp"
-        android:text="월"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_editText_date_front_month"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_textView_date_front_year" />
-
-    <TextView
-        android:id="@+id/requestActivity_textView_date_front"
+        android:id="@+id/requestActivity_textview_date_front"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="28dp"
         android:text="기간"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_textView_age"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textView_age" />
-
-    <EditText
-        android:id="@+id/requestActivity_editText_date_front_day"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="4dp"
-        android:ems="10"
-        android:gravity="right"
-        android:hint="00"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_textView_date_front_month"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_editText_date_front_month"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_age"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_age" />
 
     <TextView
-        android:id="@+id/requestActivity_textView_date_front_year"
-        android:layout_width="20dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="20dp"
-        android:text="년"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_editText_date_front_year"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_age" />
-
-    <EditText
-        android:id="@+id/requestActivity_editText_date_front_month"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:ems="10"
-        android:gravity="right"
-        android:hint="00"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_editText_date_front_year"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_editText_date_front_year"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/requestActivity_textView_date_front_day"
-        android:layout_width="20dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="52dp"
-        android:text="일"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_editText_date_front_day"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_textView_date_front_month" />
-
-    <EditText
-        android:id="@+id/requestActivity_editText_date_back_year"
-        android:layout_width="96dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:gravity="right"
-        android:hint="0000"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_textView_date_front"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_date_front_year"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/requestActivity_editText_date_back_month"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="6dp"
-        android:ems="10"
-        android:gravity="right"
-        android:hint="00"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_textView_date_back_year"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_editText_date_back_year" />
-
-    <EditText
-        android:id="@+id/requestActivity_editText_date_back_day"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="6dp"
-        android:ems="10"
-        android:gravity="right"
-        android:hint="00"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_textView_date_back_month"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_editText_date_back_year" />
-
-    <TextView
-        android:id="@+id/requestActivity_textView_date_front_to_back"
+        android:id="@+id/requestActivity_textview_time_front"
         android:layout_width="40dp"
         android:layout_height="30dp"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical"
-        android:text="부터"
+        android:layout_marginTop="84dp"
+        android:text="시간"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_textView_date_front"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textView_date_front_year" />
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_date_front"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_date_front" />
 
     <TextView
-        android:id="@+id/requestActivity_textView_information"
+        android:id="@+id/requestActivity_textview_time_front_to_back"
+        android:layout_width="15dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="124dp"
+        android:gravity="center_vertical"
+        android:text="~"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_textview_time_front"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_time_front" />
+
+    <TextView
+        android:id="@+id/requestActivity_edittext_time_back"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:text="tt-mm"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_date_back"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_edittext_time_front"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/requestActivity_textview_time_end"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:text="까지"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_date_end"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_time_front_to_back" />
+
+    <TextView
+        android:id="@+id/requestActivity_edittext_time_front"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:text="tt-mm"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_date_front"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_date_front" />
+
+    <TextView
+        android:id="@+id/requestActivity_edittext_date_back"
+        android:layout_width="104dp"
+        android:layout_height="24dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:text="yyyy-mm-dd"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_gender"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_edittext_date_front"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <TextView
+        android:id="@+id/requestActivity_textview_date_front_to_back"
+        android:layout_width="15dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="124dp"
+        android:gravity="center_vertical"
+        android:text="~"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_textview_date_front"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_date_front" />
+
+    <TextView
+        android:id="@+id/requestActivity_textview_information"
         android:layout_width="80dp"
         android:layout_height="30dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="204dp"
         android:gravity="center_vertical"
         android:text="세부사항"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_editText_date_back_year"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_date_back_month" />
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_textview_date_front"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_date_front" />
 
     <EditText
-        android:id="@+id/requestActivity_editText_information"
+        android:id="@+id/requestActivity_edittext_information"
         android:layout_width="328dp"
-        android:layout_height="174dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="더 적을것이 있다면 적어주세요.\n예) XXX 자격증 필요합니다~\n     , 010-XXXX-XXXX로 연락주세요. \n     , 감사합니다!"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_editText_date_back_year"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textView_information"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_date_front"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_information"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/requestActivity_textView_date_back_year"
-        android:layout_width="20dp"
+        android:id="@+id/requestActivity_textview_date_end"
+        android:layout_width="40dp"
         android:layout_height="30dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="44dp"
-        android:text="년"
+        android:layout_marginStart="104dp"
+        android:text="까지"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_editText_date_back_year"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_date_front_year" />
-
-    <TextView
-        android:id="@+id/requestActivity_textView_date_back_month"
-        android:layout_width="20dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        android:text="월"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_editText_date_back_month"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_textView_date_back_year" />
-
-    <TextView
-        android:id="@+id/requestActivity_textView_date_back_day"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        android:text="일 까지"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_editText_date_back_day"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_textView_date_back_month" />
-
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_date_back"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_date_front_to_back" />
 
     <CheckBox
-        android:id="@+id/requestActivity_checkBox_female"
+        android:id="@+id/requestActivity_checkbox_female"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="여"
-        app:layout_constraintEnd_toEndOf="@+id/requestActivity_editText_address"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_address" />
+        app:layout_constraintEnd_toEndOf="@+id/requestActivity_edittext_address"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_checkbox_male" />
 
     <TextView
-        android:id="@+id/requestActivity_textView_age"
+        android:id="@+id/requestActivity_textview_age"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="24dp"
         android:text="나이"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_textView_address"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textView_address" />
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_address"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_address" />
 
     <EditText
-        android:id="@+id/requestActivity_editText_age"
-        android:layout_width="96dp"
+        android:id="@+id/requestActivity_edittext_age"
+        android:layout_width="100dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint=""
+        android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/requestActivity_textView_age"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_address" />
+        android:maxLength="2"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_address"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_address" />
 
     <TextView
-        android:id="@+id/requestActivity_textView_gender"
+        android:id="@+id/requestActivity_textview_gender"
 
         android:layout_width="40dp"
         android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:text="성별"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/requestActivity_checkBox_male"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_address" />
+        app:layout_constraintEnd_toStartOf="@+id/requestActivity_checkbox_male"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_age" />
 
     <CheckBox
-        android:id="@+id/requestActivity_checkBox_male"
+        android:id="@+id/requestActivity_checkbox_male"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="2dp"
         android:text="남"
-        app:layout_constraintEnd_toStartOf="@+id/requestActivity_checkBox_female"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_editText_address" />
+        app:layout_constraintEnd_toStartOf="@+id/requestActivity_checkbox_female"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_edittext_age" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
