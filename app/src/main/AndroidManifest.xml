@@ -22,6 +22,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ChatListActivity">
+        </activity>
+        <activity
+            android:name=".ChattingActivity">
+        </activity>
+        <activity
+            android:name=".LoginActivity">
+        </activity>
+        <activity
+            android:name=".MessageItemActivity">
+        </activity>
+        <activity
+            android:name=".PostActivity">
+        </activity>
+        <activity
+            android:name=".PostListActivity">
+        </activity>
+        <activity
+            android:name=".ProfileActivity">
+        </activity>
+        <activity
+            android:name=".RequestActivity">
+        </activity>
+        <activity
+            android:name=".SettingActivity">
+        </activity>
+        <activity
+            android:name=".SignUpActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -1,22 +1,18 @@
-package com.example.albadata2;
+package com.project.haruman;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.animation.IntArrayEvaluator;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.contentcapture.DataRemovalRequest;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Date;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class RequestActivity extends AppCompatActivity{
+public class RequestActivity extends AppCompatActivity {
 
     View button_upload;
     EditText edittext_title;
@@ -45,7 +41,7 @@ public class RequestActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.request_activity);
+        setContentView(R.layout.activity_request);
 
         this.
 
