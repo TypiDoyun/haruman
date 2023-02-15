@@ -1,44 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    >
-    <ImageView
-        tools:srcCompat="@tools:sample/avatars"
-        android:id="@+id/chatlistActivity_imageview_profile"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginBottom="4dp"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/border_radius"
-        android:clipToOutline="true"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="4dp">
+    android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/chatlistActivity_textview_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:text="채팅방이름"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/chatlistActivity_textview_message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="마지막 메세지"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"/>
-    </LinearLayout>
-</LinearLayout>
+    <ListView
+        android:id="@+id/chatListActivity_chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+</androidx.constraintlayout.widget.ConstraintLayout>
