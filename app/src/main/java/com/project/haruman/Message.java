@@ -1,5 +1,8 @@
 package com.project.haruman;
 
+import lombok.Getter;
+
+@Getter
 public class Message {
     private MessageType messageType;
     private String text;
@@ -10,7 +13,4 @@ public class Message {
         this.text = text;
     }
 
-    public String getText() {
-        return this.text;
-    }
 }

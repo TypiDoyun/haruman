@@ -1,5 +1,8 @@
 package com.project.haruman;
 
+import lombok.Getter;
+
+@Getter
 public class User {
     private String name;
     private int age;
@@ -10,20 +13,5 @@ public class User {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public long getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
 }
 
