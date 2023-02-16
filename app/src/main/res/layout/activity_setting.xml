@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageButton
+                android:id="@+id/settingActivity_imageButton_alarm"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 tools:srcCompat="@tools:sample/avatars"/>
@@ -29,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:id="@+id/settingActivity_button_signup"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:text="로그아웃"/>
