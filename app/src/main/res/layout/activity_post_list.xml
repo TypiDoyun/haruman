@@ -32,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
+                android:layout_marginBottom="2dp"
                 android:text="title"
                 android:ems="11"
                 android:textStyle="bold"
@@ -40,8 +41,7 @@
                 android:id="@+id/postListActivity_textView_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginStart="2dp"
+                android:layout_marginStart="8dp"
                 android:text="time"
                 android:ems="11"
                 android:textSize="12dp"/>
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="2dp"
+                android:layout_marginStart="8dp"
                 android:text="location"
                 android:ems="11"
                 android:textSize="12dp"/>
@@ -59,8 +59,8 @@
                 android:id="@+id/postListActivity_textView_pay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
                 android:ems="11"
                 android:text="pay"
                 android:textSize="12dp" />
