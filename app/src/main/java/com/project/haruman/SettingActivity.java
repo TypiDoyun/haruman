@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        Button alarmbtn = findViewById(R.id.settingActivity_imageButton_alarm);
+        ImageButton alarmbtn = findViewById(R.id.settingActivity_imageButton_alarm);
         alarmbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
