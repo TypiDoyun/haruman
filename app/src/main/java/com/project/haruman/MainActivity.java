@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button chattingbtn = (Button) findViewById(R.id.mainActivity_button_chat);
         Button settingbtn = (Button) findViewById(R.id.mainActivity_button_setting);
+        Button profilebtn = (Button) findViewById(R.id.mainActivity_button_profile);
+        Button requestbtn = (Button) findViewById(R.id.mainActivity_button_request);
 
         chattingbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +30,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+        profilebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        requestbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,RequestActivity.class);
                 startActivity(intent);
             }
         });
