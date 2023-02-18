@@ -40,9 +40,6 @@
             android:name=".PostActivity">
         </activity>
         <activity
-            android:name=".PostListActivity">
-        </activity>
-        <activity
             android:name=".ProfileActivity">
         </activity>
         <activity

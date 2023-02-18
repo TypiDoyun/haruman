@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostActivity"
+    tools:context=".RequestedItem"
     android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250px"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <ImageView
-            android:id="@+id/postListActivity_imageView_profile"
+            android:id="@+id/RequestedItem_imageView_profile"
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:layout_margin="4dp"
@@ -28,7 +28,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/postListActivity_textView_title"
+                android:id="@+id/RequestedItem_textView_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -38,7 +38,7 @@
                 android:textStyle="bold"
                 android:textSize="24dp"/>
             <TextView
-                android:id="@+id/postListActivity_textView_time"
+                android:id="@+id/RequestedItem_textView_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -46,7 +46,7 @@
                 android:ems="11"
                 android:textSize="12dp"/>
             <TextView
-                android:id="@+id/postListActivity_textView_location"
+                android:id="@+id/RequestedItem_textView_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -55,7 +55,7 @@
                 android:ems="11"
                 android:textSize="12dp"/>
             <TextView
-                android:id="@+id/postListActivity_textView_pay"
+                android:id="@+id/RequestedItem_textView_pay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -66,4 +66,5 @@
         </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
