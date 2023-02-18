@@ -54,7 +54,6 @@
                 android:text="location"
                 android:ems="11"
                 android:textSize="12dp"/>
-
             <TextView
                 android:id="@+id/postListActivity_textView_pay"
                 android:layout_width="wrap_content"
