@@ -9,19 +9,25 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    public Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.mainActivity_button_chat);
+        Button chattingbtn = (Button) findViewById(R.id.mainActivity_button_chat);
+        Button settingbtn = (Button) findViewById(R.id.mainActivity_button_setting);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        chattingbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ChatListActivity.class);
+                startActivity(intent);
+            }
+        });
+        settingbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,SettingActivity.class);
                 startActivity(intent);
             }
         });
