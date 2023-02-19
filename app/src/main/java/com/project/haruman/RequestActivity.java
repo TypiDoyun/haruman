@@ -175,7 +175,7 @@ public class RequestActivity extends AppCompatActivity {
         });
     }
 
-    //xml Id를 각각 변수에 집어넣는 함수.
+    //xml Id를 각각 변수에 집어넣는 함수..
     public void InitializeView(){
         button_upload = findViewById(R.id.requestActivity_button_upload);
         edittext_title = (EditText) findViewById(R.id.requestActivity_edittext_title);
