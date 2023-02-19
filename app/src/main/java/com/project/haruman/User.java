@@ -7,10 +7,13 @@ public class User {
     private String name;
     private int age;
     private Gender gender;
-    private long phoneNumber;
+    private String phoneNumber;
 
-    public User(String name) {
+    public User(String name, int age, Gender gender, String phoneNumber) {
         this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
     }
 
 }

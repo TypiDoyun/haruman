@@ -20,7 +20,7 @@ public class ChatListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_list);
 
-        User user = new User("유저1");
+        User user = new User("유저1", 19, Gender.Male, "01012344321");
         Message message = new Message(MessageType.Text, "안녕하세요");
 
         chatList.add(new ChatRoom(user, message));
