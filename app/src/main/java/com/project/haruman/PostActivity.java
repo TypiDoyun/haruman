@@ -40,8 +40,7 @@ public class PostActivity extends AppCompatActivity {
         mainbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PostActivity.this,MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
