@@ -206,7 +206,7 @@
         app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_date_front" />
 
     <TextView
-        android:id="@+id/requestActivity_textview_information"
+        android:id="@+id/requestActivity_textview_detail"
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:layout_marginStart="84dp"
@@ -218,7 +218,7 @@
         app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_date_front" />
 
     <EditText
-        android:id="@+id/requestActivity_edittext_information"
+        android:id="@+id/requestActivity_edittext_detail"
         android:layout_width="328dp"
         android:layout_height="160dp"
         android:layout_marginTop="12dp"
@@ -228,7 +228,7 @@
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_date_front"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_information"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_detail"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView

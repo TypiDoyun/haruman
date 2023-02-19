@@ -31,18 +31,18 @@ public class RequestActivity extends AppCompatActivity {
     private TextView date_back;
     private TextView time_front;
     private TextView time_back;
-    private EditText edittext_information;
+    private EditText edittext_detail;
 
     private String title;
     private String address;
     private int ageMin;
     private int ageMax;
-    private boolean[] gender = {false,false,false};
-    private int[] front_date = {0,0,0};
-    private int[] back_date = {0,0,0};
-    private int[] front_time = {0,0};
-    private int[] back_time = {0,0};
-    private String information;
+    private boolean[] gender = {false,false,false}; //성별 (성별무관, 남자, 여자)
+    private int[] front_date = {0,0,0}; //시작 날짜
+    private int[] back_date = {0,0,0}; //끝 날짜
+    private int[] front_time = {0,0}; //시작시간
+    private int[] back_time = {0,0}; //끝 시간
+    private String detail;
 
     private DatePickerDialog.OnDateSetListener callbackMethod_date_front;
     private DatePickerDialog.OnDateSetListener callbackMethod_date_back;
@@ -155,8 +155,8 @@ public class RequestActivity extends AppCompatActivity {
             }
         });
 
-        // 세부사항을 입력할때 실시간으로 information 문자열 변수에 내용을 입력함.
-        edittext_information.addTextChangedListener(new TextWatcher() {
+        // 세부사항을 입력할때 실시간으로 detail 문자열 변수에 내용을 입력함.
+        edittext_detail.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -165,7 +165,7 @@ public class RequestActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                information = String.valueOf(edittext_information.getText());
+                detail = String.valueOf(edittext_detail.getText());
             }
 
             @Override
@@ -189,7 +189,7 @@ public class RequestActivity extends AppCompatActivity {
         date_back = findViewById(R.id.requestActivity_edittext_date_back);
         time_front = findViewById(R.id.requestActivity_edittext_time_front);
         time_back = findViewById(R.id.requestActivity_edittext_time_back);
-        edittext_information = (EditText) findViewById(R.id.requestActivity_edittext_information);
+        edittext_detail = (EditText) findViewById(R.id.requestActivity_edittext_detail);
     }
 
     // "날짜 지정" 버튼을 누를때 callbackMethod_date 변수에 선택된 날짜를 집어넣음.
