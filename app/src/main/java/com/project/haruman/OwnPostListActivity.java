@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,10 +16,14 @@ import java.util.ArrayList;
 
 public class OwnPostListActivity extends AppCompatActivity {
 
+    Button backBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_post_list);
+
+        backBtn = findViewById(R.id.ownPostListActivity_button_back);
 
         ListView ownPostListView = findViewById(R.id.ownPostListActivity_listView_ownPost);
 
@@ -40,6 +45,13 @@ public class OwnPostListActivity extends AppCompatActivity {
                 startActivity(intent);
                 //데이터베이스 관련된 코드 추가예정
                 //데이터베이스 관련된 코드 추가예정
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

@@ -44,8 +44,6 @@ public class ChattingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 chatBar_log = String.valueOf(edittext_chatBar.getText());
                 edittext_chatBar.setText("");
-                HideKeyBoard();
-
             }
         });
     }
