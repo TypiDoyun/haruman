@@ -16,15 +16,23 @@
         android:theme="@style/Theme.Haruman"
         tools:targetApi="31">
         <activity
+            android:name=".DeletePopupActivity"
+            android:theme="@style/Theme.MyDialog"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".OwnPostListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ChatListActivity"></activity>
-        <activity android:name=".ChattingActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ChatListActivity" />
+        <activity android:name=".ChattingActivity" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -34,12 +42,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MessageItemActivity"></activity>
-        <activity android:name=".PostActivity"></activity>
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".RequestActivity"></activity>
-        <activity android:name=".SettingActivity"></activity>
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".MessageItemActivity" />
+        <activity android:name=".PostActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".RequestActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".SignUpActivity" />
     </application>
 
 </manifest>

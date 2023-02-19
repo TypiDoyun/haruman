@@ -26,10 +26,19 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        Button mainbtn = findViewById(R.id.postActivity_button_back);
-        Button chatbtn = findViewById(R.id.postActivity_button_chat);
+        Button mainBtn = findViewById(R.id.postActivity_button_back);
+        Button chatBtn = findViewById(R.id.postActivity_button_chat);
+        Button deleteBtn = findViewById(R.id.postActivity_button_delete);
 
-        chatbtn.setOnClickListener(new View.OnClickListener() {
+        //특정 조건에 의해서 삭제버튼을 숨기거나 보이게하기
+        if(true){
+            deleteBtn.setVisibility(View.VISIBLE);
+        }
+        else{
+            deleteBtn.setVisibility(View.GONE);
+        }
+
+        chatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PostActivity.this,ChattingActivity.class);
@@ -37,10 +46,18 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        mainbtn.setOnClickListener(new View.OnClickListener() {
+        mainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PostActivity.this,DeletePopupActivity.class);
+                startActivity(intent);
             }
         });
     }
