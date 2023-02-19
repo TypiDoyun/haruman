@@ -2,6 +2,7 @@ package com.project.haruman;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,9 +37,8 @@ public class ChatListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id){
-                Toast.makeText(getApplicationContext(),
-                        adapter.getItem(position).getLatestMessage().getText(),
-                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ChatListActivity.this, ChattingActivity.class);
+                startActivity(intent);
             }
         });
     }
