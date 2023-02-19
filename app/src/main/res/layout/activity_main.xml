@@ -69,6 +69,7 @@
         android:id="@+id/mainActivity_button_request"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginRight="4dp"
         android:text="+"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

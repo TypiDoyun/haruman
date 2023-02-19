@@ -10,33 +10,36 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="75dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <ImageView
             android:id="@+id/RequestedItem_imageView_profile"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_margin="4dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/RequestedItem_textView_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginBottom="2dp"
                 android:text="title"
                 android:ems="11"
                 android:textStyle="bold"
-                android:textSize="24dp"/>
+                android:textSize="16dp"/>
             <TextView
                 android:id="@+id/RequestedItem_textView_time"
                 android:layout_width="wrap_content"
@@ -44,25 +47,25 @@
                 android:layout_marginStart="8dp"
                 android:text="time"
                 android:ems="11"
-                android:textSize="12dp"/>
+                android:textSize="10dp"/>
             <TextView
                 android:id="@+id/RequestedItem_textView_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginStart="8dp"
                 android:text="location"
                 android:ems="11"
-                android:textSize="12dp"/>
+                android:textSize="10dp"/>
             <TextView
                 android:id="@+id/RequestedItem_textView_pay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:ems="11"
                 android:text="pay"
-                android:textSize="12dp" />
+                android:textSize="10dp" />
         </LinearLayout>
 
     </LinearLayout>
