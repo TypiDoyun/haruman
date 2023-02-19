@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
         MainActivity.PostAdapter adapter = new MainActivity.PostAdapter();
 
-        adapter.addItem(new RequestedItem("자고싶다","11:11","유니버스","500"));
-        adapter.addItem(new RequestedItem("개졸리다","22:22","멀티버스","250"));
-        adapter.addItem(new RequestedItem("쉬고싶다","33:33","시내버스","125"));
+        adapter.addItem(new RequestedItem("야붕이 조졌다","11:11","맘스터치 고림점","500"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","22:22","GS25 고림점","250"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
 
         postListView.setAdapter(adapter);
 
