@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView listView = findViewById(R.id.mainActivity_post_list);
+        ListView postListView = findViewById(R.id.mainActivity_post_list);
 
         MainActivity.PostAdapter adapter = new MainActivity.PostAdapter();
 
@@ -27,7 +29,20 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(new RequestedItem("개졸리다","22:22","멀티버스","250"));
         adapter.addItem(new RequestedItem("쉬고싶다","33:33","시내버스","125"));
 
-        listView.setAdapter(adapter);
+        postListView.setAdapter(adapter);
+
+        postListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                adapter.notifyDataSetChanged();
+
+                Toast.makeText(getApplicationContext(), (i+1)+"번째 글.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, PostActivity.class);
+                startActivity(intent);
+                //데이터베이스 관련된 코드 추가예정
+                //데이터베이스 관련된 코드 추가예정
+            }
+        });
 
         Button chattingbtn = (Button) findViewById(R.id.mainActivity_button_chat);
         Button settingbtn = (Button) findViewById(R.id.mainActivity_button_setting);
