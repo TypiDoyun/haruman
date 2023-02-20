@@ -1,15 +1,14 @@
-package com.project.haruman;
+package com.project.haruman.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import com.project.haruman.R;
 
 
 public class ChattingActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.project.haruman;
+package com.project.haruman.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.project.haruman.ChatListAdapter;
+import com.project.haruman.ChatRoom;
+import com.project.haruman.Gender;
+import com.project.haruman.Message;
+import com.project.haruman.MessageType;
+import com.project.haruman.R;
+import com.project.haruman.User;
 
 import java.util.ArrayList;
 

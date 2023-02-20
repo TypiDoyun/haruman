@@ -1,4 +1,4 @@
-package com.project.haruman;
+package com.project.haruman.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,10 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.project.haruman.R;
+import com.project.haruman.RequestedItem;
+import com.project.haruman.RequestedItemView;
 
 import java.util.ArrayList;
 
