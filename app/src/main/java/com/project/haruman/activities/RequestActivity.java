@@ -1,4 +1,4 @@
-package com.project.haruman;
+package com.project.haruman.activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -14,6 +14,8 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.project.haruman.R;
 
 import java.sql.Time;
 

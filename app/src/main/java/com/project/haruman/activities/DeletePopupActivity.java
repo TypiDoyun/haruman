@@ -1,4 +1,4 @@
-package com.project.haruman;
+package com.project.haruman.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.project.haruman.R;
 
 public class DeletePopupActivity extends AppCompatActivity {
 

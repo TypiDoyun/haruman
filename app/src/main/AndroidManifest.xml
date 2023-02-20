@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Haruman"
         tools:targetApi="31">
         <activity
-            android:name=".DeletePopupActivity"
+            android:name=".activities.DeletePopupActivity"
             android:theme="@style/Theme.MyDialog"
             android:exported="false">
             <meta-data
@@ -24,17 +24,17 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".OwnPostListActivity"
+            android:name=".activities.OwnPostListActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ChatListActivity" />
-        <activity android:name=".ChattingActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.ChatListActivity" />
+        <activity android:name=".activities.ChattingActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,12 +42,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MessageItemActivity" />
-        <activity android:name=".PostActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".RequestActivity" />
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".SignUpActivity" />
+        <activity android:name=".activities.MessageItemActivity" />
+        <activity android:name=".activities.PostActivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.RequestActivity" />
+        <activity android:name=".activities.SettingActivity" />
+        <activity android:name=".activities.SignUpActivity" />
     </application>
 
 </manifest>

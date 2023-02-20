@@ -1,4 +1,4 @@
-package com.project.haruman;
+package com.project.haruman.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.provider.AlarmClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.project.haruman.R;
 
 
 public class SettingActivity extends AppCompatActivity {

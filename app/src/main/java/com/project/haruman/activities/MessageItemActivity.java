@@ -1,8 +1,10 @@
-package com.project.haruman;
+package com.project.haruman.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.project.haruman.R;
 
 
 public class MessageItemActivity extends AppCompatActivity {
