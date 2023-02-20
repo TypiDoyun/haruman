@@ -21,6 +21,12 @@
             android:layout_gravity="end"
             android:background="@android:drawable/ic_menu_more" />
 
+        <ListView
+            android:id="@+id/chattingActivity_chatList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E4E4E4" />
+
     </LinearLayout>
 
     <LinearLayout
