@@ -14,7 +14,6 @@ public class RequestedItem {
         this.pay = pay;
     }
 
-    public RequestedItem() {}
 
     public String getTitle() {
         return this.title;

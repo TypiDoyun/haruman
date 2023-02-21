@@ -32,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(new RequestedItem("야붕이 조졌다","11:11","맘스터치 고림점","500"));
         adapter.addItem(new RequestedItem("편붕이 조졌다","22:22","GS25 고림점","250"));
         adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
+        adapter.addItem(new RequestedItem("편붕이 조졌다","33:33","CU 고림점","125"));
 
         postListView.setAdapter(adapter);
 

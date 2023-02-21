@@ -10,64 +10,117 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="90dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#FeFeFe">
         <ImageView
             android:id="@+id/RequestedItem_imageView_profile"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_margin="7dp"
             android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center">
             <TextView
-                android:id="@+id/RequestedItem_textView_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="2dp"
-                android:text="title"
-                android:ems="11"
-                android:textStyle="bold"
-                android:textSize="16dp"/>
-            <TextView
-                android:id="@+id/RequestedItem_textView_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="time"
-                android:ems="11"
-                android:textSize="10dp"/>
-            <TextView
-                android:id="@+id/RequestedItem_textView_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="8dp"
-                android:text="location"
-                android:ems="11"
-                android:textSize="10dp"/>
-            <TextView
-                android:id="@+id/RequestedItem_textView_pay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="2dp"
-                android:ems="11"
-                android:text="pay"
-                android:textSize="10dp" />
-        </LinearLayout>
+            android:id="@+id/RequestedItem_textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="2dp"
+            android:text="title"
+            android:ems="11"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:textColor="@color/black"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/post_in_background"
+                android:padding="4dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:background="@drawable/time_icon"
+                        android:layout_margin="2dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/RequestedItem_textView_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="time"
+                        android:ems="10"
+                        android:layout_marginStart="5dp"
+                        android:textSize="10dp"
+                        android:fontFamily="@font/kcc"
+                        android:textColor="#4D4D4D"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/location_icon"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/RequestedItem_textView_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="location"
+                        android:ems="10"
+                        android:layout_marginStart="5dp"
+                        android:textSize="10dp"
+                        android:fontFamily="@font/kcc"
+                        android:textColor="#4D4D4D"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/pay_icon"/>
+                    <TextView
+                        android:id="@+id/RequestedItem_textView_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="pay"
+                        android:ems="10"
+                        android:textSize="10dp"
+                        android:textColor="#4D4D4D"
+                        android:fontFamily="@font/kcc"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
