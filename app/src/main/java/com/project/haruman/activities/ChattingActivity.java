@@ -34,6 +34,7 @@ public class ChattingActivity extends AppCompatActivity {
         EditText edittext_chatBar = findViewById(R.id.chattingActivity_editText_chatbar);
         ListView chatListView = findViewById(R.id.chattingActivity_chatList);
         Button button_send = findViewById(R.id.chattingActivity_button_send);
+        Button button_back = findViewById(R.id.chattingActivity_button_back);
 
         //어댑터 생성 & 소환
         ChattingActivity.ChatLogAdapter adapter = new ChattingActivity.ChatLogAdapter();
@@ -47,6 +48,12 @@ public class ChattingActivity extends AppCompatActivity {
                 adapter.addItem(new ChatLogItem(chatBar_log)); //어댑터에 방금 가져온 글을 추가함
                 edittext_chatBar.setText(""); //입력칸을 깨끗하게 비움
                 adapter.notifyDataSetChanged(); //어댑터를 새로고침 함
+            }
+        });
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
