@@ -4,6 +4,7 @@ import lombok.Getter;
 
 @Getter
 public class User {
+    private String id;
     private String name;
     private int age;
     private Gender gender;
@@ -15,6 +16,5 @@ public class User {
         this.gender = gender;
         this.phoneNumber = phoneNumber;
     }
-
 }
 
