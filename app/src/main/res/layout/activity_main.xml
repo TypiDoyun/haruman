@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity"
     android:orientation="vertical"
-    android:background="#f6f6f6">
+    android:background="#FEE8FF">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -18,90 +18,112 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="4dp">
-            <Button
-                android:id="@+id/mainActivity_button_profile"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/profile_icon" />
-
-            <TextView
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/kcc"
-                android:gravity="center"
-                android:text="프로필"
-                android:textColor="#000000"
-                android:textSize="9dp"/>
-        </LinearLayout>
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                android:paddingBottom="10dp"
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="4dp">
-            <Button
-                android:id="@+id/mainActivity_button_chat"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/chat_icon"
-                android:layout_margin="4dp"/>
-            <TextView
+                <Button
+                    android:id="@+id/mainActivity_button_profile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/profile_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/kcc"
+                    android:gravity="center"
+                    android:text="프로필"
+                    android:textColor="#000000"
+                    android:textSize="9dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/kcc"
-                android:gravity="center"
-                android:text="채팅"
-                android:textColor="#000000"
-                android:textSize="9dp"/>
+                android:orientation="vertical">
 
+                <Button
+                    android:id="@+id/mainActivity_button_chat"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/chat_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/kcc"
+                    android:gravity="center"
+                    android:text="채팅"
+                    android:textColor="#000000"
+                    android:textSize="9dp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-        <Button
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="하루만"
+        android:fontFamily="@font/kcc"
+        android:textColor="#cc9cc7"
+        android:layout_marginTop="17dp"
+        android:textSize="25dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <Button
             android:id="@+id/mainActivity_button_setting"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_margin="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
             android:background="@drawable/option_icon"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FEE8FF"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
 
     <LinearLayout
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#fdfdfd"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="#ffffff"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-            <EditText
-                android:id="@+id/mainActivity_editText_search"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:background="@drawable/edit_background"
-                android:gravity="center"
-                android:hint="  검색어를 입력하세요."
-                android:textSize="15dp" />
-            <Button
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/search_background"
-                android:text="검색"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/mainActivity_editText_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/login_edit_background"
+            android:gravity="center"
+            android:textSize="15dp" />
     </LinearLayout>
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#f6f6f6"
+        android:background="#FEE8FF"
         app:layout_constraintTop_toBottomOf="@id/search_bar"/>
 
     <LinearLayout

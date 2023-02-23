@@ -3,29 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#FEE8FF"
     tools:context=".Login">
-
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginTop="-60dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="하루만"
+            android:fontFamily="@font/kcc"
+            android:textSize="40dp"
+            android:textColor="#cc9cc7"
+            android:layout_marginBottom="70dp"/>
 
         <TextView
             android:id="@+id/logintext"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:background="@drawable/button_background"
-            android:padding="20dp"
+            android:layout_marginBottom="10dp"
             android:text="로그인"
             android:layout_gravity="center"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="bold" />
+
+            android:fontFamily="@font/kcc" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="3dp"
                 android:background="@drawable/login_edit_background"
                 android:ems="12"
                 android:hint="    아이디(전화번호)"
@@ -48,7 +57,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="-11dp"
                 android:ems="12"
                 android:background="@drawable/login_edit_background"
                 android:textSize="15dp"
@@ -74,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:background="#00000000"
             android:text="회원가입"
             android:textColor="@color/black"
