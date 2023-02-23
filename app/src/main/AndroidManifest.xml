@@ -16,7 +16,39 @@
         android:theme="@style/Theme.Haruman"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ChatLogItemView"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ChatLogItem"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.DeletePopupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyDialog">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.OwnPostListActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.ChatListActivity" />
+        <activity android:name=".activities.ChattingActivity" />
+        <activity
+            android:name=".activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,36 +56,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ChatListActivity">
-        </activity>
-        <activity
-            android:name=".ChattingActivity">
-        </activity>
-        <activity
-            android:name=".LoginActivity">
-        </activity>
-        <activity
-            android:name=".MessageItemActivity">
-        </activity>
-        <activity
-            android:name=".PostActivity">
-        </activity>
-        <activity
-            android:name=".PostListActivity">
-        </activity>
-        <activity
-            android:name=".ProfileActivity">
-        </activity>
-        <activity
-            android:name=".RequestActivity">
-        </activity>
-        <activity
-            android:name=".SettingActivity">
-        </activity>
-        <activity
-            android:name=".SignUpActivity">
-        </activity>
+        <activity android:name=".activities.MessageItemActivity" />
+        <activity android:name=".activities.PostActivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.RequestActivity" />
+        <activity android:name=".activities.SettingActivity" />
+        <activity android:name=".activities.SignUpActivity" />
     </application>
 
 </manifest>

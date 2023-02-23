@@ -66,51 +66,71 @@
         app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_title" />
 
     <Button
+        android:id="@+id/requestActivity_back_datePicker"
+        android:layout_width="104dp"
+        android:layout_height="48dp"
+        android:onClick="OnClickHandlerDatePickup"
+        android:text="날짜 지정"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_date_back"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_front_datePicker" />
+
+    <Button
         android:id="@+id/requestActivity_front_datePicker"
         android:layout_width="104dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
+        android:onClick="OnClickHandlerDatePickup"
         android:text="날짜 지정"
-        android:onClick="OnClickHandler_Front"
         app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_date_front"
         app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_date_front" />
 
     <Button
-        android:id="@+id/requestActivity_back_datePicker"
+        android:id="@+id/requestActivity_front_timePicker"
         android:layout_width="104dp"
         android:layout_height="48dp"
-        android:text="날짜 지정"
-        android:onClick="OnClickHandler_Front"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_date_back"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_front_datePicker" />
+        android:layout_marginTop="4dp"
+        android:onClick="OnClickHandlerTimePickup"
+        android:text="시간 지정"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_time_front"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_time_front" />
+
+    <Button
+        android:id="@+id/requestActivity_back_timePicker"
+        android:layout_width="104dp"
+        android:layout_height="48dp"
+        android:onClick="OnClickHandlerTimePickup"
+        android:text="시간 지정"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_time_back"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_front_timePicker" />
 
     <TextView
         android:id="@+id/requestActivity_edittext_date_front"
         android:layout_width="104dp"
         android:layout_height="24dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:gravity="center_horizontal"
         android:text="yyyy-mm-dd"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_age"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_age" />
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_textview_date_front"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_date_front" />
 
     <TextView
         android:id="@+id/requestActivity_textview_date_front"
         android:layout_width="40dp"
         android:layout_height="30dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:text="기간"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_age"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_age" />
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_gender"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_gender" />
 
     <TextView
         android:id="@+id/requestActivity_textview_time_front"
         android:layout_width="40dp"
         android:layout_height="30dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="52dp"
         android:text="시간"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_date_front"
@@ -148,11 +168,12 @@
         app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_date_end"
         app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_time_front_to_back" />
 
+
     <TextView
         android:id="@+id/requestActivity_edittext_time_front"
         android:layout_width="100dp"
         android:layout_height="24dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:gravity="center_horizontal"
         android:text="tt-mm"
@@ -164,14 +185,14 @@
         android:id="@+id/requestActivity_edittext_date_back"
         android:layout_width="104dp"
         android:layout_height="24dp"
+        android:layout_marginStart="24dp"
         android:ems="10"
         android:gravity="center_horizontal"
         android:text="yyyy-mm-dd"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_gender"
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_edittext_date_front"
         app:layout_constraintTop_toTopOf="@+id/requestActivity_edittext_date_front"
         tools:ignore="SpeakableTextPresentCheck" />
-
 
     <TextView
         android:id="@+id/requestActivity_textview_date_front_to_back"
@@ -185,11 +206,11 @@
         app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_date_front" />
 
     <TextView
-        android:id="@+id/requestActivity_textview_information"
+        android:id="@+id/requestActivity_textview_detail"
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="148dp"
         android:gravity="center_vertical"
         android:text="세부사항"
         android:textSize="20sp"
@@ -197,7 +218,7 @@
         app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_date_front" />
 
     <EditText
-        android:id="@+id/requestActivity_edittext_information"
+        android:id="@+id/requestActivity_edittext_detail"
         android:layout_width="328dp"
         android:layout_height="160dp"
         android:layout_marginTop="12dp"
@@ -207,7 +228,7 @@
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_date_front"
-        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_information"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_detail"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -224,24 +245,36 @@
         android:id="@+id/requestActivity_checkbox_female"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="OnClickHandlerCheckbox"
         android:text="여"
-        app:layout_constraintEnd_toEndOf="@+id/requestActivity_edittext_address"
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_checkbox_male"
         app:layout_constraintTop_toTopOf="@+id/requestActivity_checkbox_male" />
 
     <TextView
-        android:id="@+id/requestActivity_textview_age"
-        android:layout_width="40dp"
+        android:id="@+id/requestActivity_textview_age_min"
+        android:layout_width="80dp"
         android:layout_height="30dp"
         android:layout_marginTop="24dp"
-        android:text="나이"
+        android:text="최소 나이"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_address"
         app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_address" />
 
+    <TextView
+        android:id="@+id/requestActivity_textview_age_max"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:text="최소 나이"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_edittext_age_min"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_age_min" />
+
     <EditText
-        android:id="@+id/requestActivity_edittext_age"
-        android:layout_width="100dp"
+        android:id="@+id/requestActivity_edittext_age_min"
+        android:layout_width="54dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint=""
@@ -249,28 +282,52 @@
         android:importantForAutofill="no"
         android:inputType="number"
         android:maxLength="2"
-        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_address"
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_textview_age_min"
         app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_address" />
+
+    <EditText
+        android:id="@+id/requestActivity_edittext_age_max"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint=""
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="2"
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_textview_age_max"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_edittext_age_min" />
 
     <TextView
         android:id="@+id/requestActivity_textview_gender"
 
         android:layout_width="40dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
         android:text="성별"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/requestActivity_checkbox_male"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_age" />
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_textview_age_min"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_textview_age_min" />
 
     <CheckBox
         android:id="@+id/requestActivity_checkbox_male"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
+        android:onClick="OnClickHandlerCheckbox"
         android:text="남"
-        app:layout_constraintEnd_toStartOf="@+id/requestActivity_checkbox_female"
-        app:layout_constraintTop_toTopOf="@+id/requestActivity_edittext_age" />
+        app:layout_constraintStart_toEndOf="@+id/requestActivity_checkbox_allGen"
+        app:layout_constraintTop_toTopOf="@+id/requestActivity_checkbox_allGen" />
+
+    <CheckBox
+        android:id="@+id/requestActivity_checkbox_allGen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="OnClickHandlerCheckbox"
+        android:text="전부"
+        app:layout_constraintStart_toStartOf="@+id/requestActivity_edittext_address"
+        app:layout_constraintTop_toBottomOf="@+id/requestActivity_edittext_age_min" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
