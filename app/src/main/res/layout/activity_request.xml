@@ -265,7 +265,7 @@
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:text="최소 나이"
+        android:text="최대 나이"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/requestActivity_edittext_age_min"
         app:layout_constraintTop_toTopOf="@+id/requestActivity_textview_age_min" />

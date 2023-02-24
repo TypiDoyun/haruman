@@ -15,15 +15,23 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.project.haruman.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.sql.Time;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RequestActivity extends AppCompatActivity {
 
@@ -46,10 +54,10 @@ public class RequestActivity extends AppCompatActivity {
     private int ageMin;
     private int ageMax;
     private boolean[] gender = {false,false,false}; //성별 (성별무관, 남자, 여자)
-    private int[] front_date = {0,0,0}; //시작 날짜
-    private int[] back_date = {0,0,0}; //끝 날짜
-    private int[] front_time = {0,0}; //시작시간
-    private int[] back_time = {0,0}; //끝 시간
+    private String front_date; //시작 날짜
+    private String back_date; //끝 날짜
+    private String front_time; //시작시간
+    private String back_time; //끝 시간
     private String detail;
 
     private DatePickerDialog.OnDateSetListener callbackMethod_date_front;
@@ -71,7 +79,8 @@ public class RequestActivity extends AppCompatActivity {
         button_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                requestCreatePost();
+                //finish();
             }
         });
 
@@ -182,10 +191,16 @@ public class RequestActivity extends AppCompatActivity {
             }
         });
 
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://127.0.0.1:3000/requestCreatePost";
 
-        StringRequest stringRequest = new StringRequest(
+    }
+
+    public void requestCreatePost(){
+        final RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://25.44.102.226:3000/requestCreatePost";
+        url = MakeNewUrl(url);
+        System.out.println(url);
+
+        final StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
                 url,
                 new Response.Listener<String>() {
@@ -201,8 +216,8 @@ public class RequestActivity extends AppCompatActivity {
                     }
                 }
         );
-
         queue.add(stringRequest);
+
     }
 
     //xml Id를 각각 변수에 집어넣는 함수..
@@ -244,9 +259,7 @@ public class RequestActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 date_front.setText(year + "-" + month + "-" + dayOfMonth);
-                front_date[0] = year;
-                front_date[1] = month;
-                front_date[2] = dayOfMonth;
+                front_date = year + "-" + month + "-" + dayOfMonth;
             }
         };
 
@@ -254,9 +267,7 @@ public class RequestActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 date_back.setText(year + "-" + month + "-" + dayOfMonth);
-                back_date[0] = year;
-                back_date[1] = month;
-                back_date[2] = dayOfMonth;
+                back_date = year + "-" + month + "-" + dayOfMonth;
             }
         };
     }
@@ -283,16 +294,14 @@ public class RequestActivity extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 time_front.setText(hourOfDay + ":" + minute);
-                front_time[0] = hourOfDay;
-                front_time[1] = minute;
+                front_time = hourOfDay + ":" + minute;
             }
         };
         callbackMethod_time_back = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 time_back.setText(hourOfDay + ":" + minute);
-                back_time[0] = hourOfDay;
-                back_time[1] = minute;
+                back_time = hourOfDay + ":" + minute;
             }
         };
     }
@@ -339,6 +348,27 @@ public class RequestActivity extends AppCompatActivity {
         this.gender[0] = false;
         this.gender[1] = false;
         this.gender[2] = false;
+    }
+
+    private String GetGender(){
+        if(this.gender[0] == true) return "전부";
+        else if(this.gender[1] == true) return "남";
+        else if(this.gender[2] == true) return "여";
+        else return "";
+    };
+
+    private String GetAge(){
+        String age = String.valueOf(ageMin) + String.valueOf(ageMax);
+        return age;
+    }
+
+    private String GetPeriod(){
+        String period = front_date + "~" + back_date + "/" + front_time + "~" + back_time;
+        return period;
+    }
+
+    private String MakeNewUrl(String url){
+        return url + "?title=" + title + "&address=" + address + "&age=" + GetAge() + "&gender=" + GetGender() + "&period=" + GetPeriod() + "&details=" + detail;
     }
 
 
