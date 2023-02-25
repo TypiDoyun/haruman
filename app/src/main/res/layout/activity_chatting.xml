@@ -29,6 +29,7 @@
             android:id="@+id/chattingActivity_chatList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:stackFromBottom="true"
             android:background="#E4E4E4" />
 
     </LinearLayout>
