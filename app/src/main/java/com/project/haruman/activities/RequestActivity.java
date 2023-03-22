@@ -5,6 +5,7 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -28,8 +29,7 @@ import com.project.haruman.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.sql.Time;
-import java.util.Arrays;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,16 +70,17 @@ public class RequestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
+        String url = "http://25.44.102.226:3000/requestCreatePost";
 
         this.UpdateDateValue(); // 154번 줄
         this.InitializeView(); // 125번 줄
         this.UpdateTimeValue(); // 248번 줄
 
-        // 게시물 올리기를 누르면 RequestActivity 를 종료함. (추후에 서버로 넘기는 기능을 추가해야하긴 함)
+        // 게시물 올리기를 누르면 RequestActivity 를 종료함.
         button_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requestCreatePost();
+                requestCreatePost_JSON(url);
                 //finish();
             }
         });
@@ -194,30 +195,89 @@ public class RequestActivity extends AppCompatActivity {
 
     }
 
-    public void requestCreatePost(){
-        final RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://25.44.102.226:3000/requestCreatePost";
-        url = MakeNewUrl(url);
-        System.out.println(url);
 
-        final StringRequest stringRequest = new StringRequest(
-                Request.Method.GET,
-                url,
+    public void requestCreatePost_JSON(final String url){
+        //TODO 데이터 Request 객체 생성
+        RequestQueue queue = Volley.newRequestQueue(this);
+        //TODO 파라미터값 선언 실시
+        JSONObject jsonBodyObj = new JSONObject();
+        try{
+            jsonBodyObj.put("title",title);
+            jsonBodyObj.put("address",address);
+            jsonBodyObj.put("age",GetAge());
+            jsonBodyObj.put("gender",GetGender());
+            jsonBodyObj.put("period",GetPeriod());
+            jsonBodyObj.put("details",detail);
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+        final String requestBody = String.valueOf(jsonBodyObj.toString());
+        //TODO 데이터 Response 객체 생성+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, null,
+                //TODO 데이터 전송 요청 성공
+                new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    Toast.makeText(RequestActivity.this, response.getString("response"), Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            },
+                //TODO 데이터 전송 요청 에러 발생
+                new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error.getMessage());
+            }
+        })
+                //TODO 헤더값 선언 실시 및 Body 데이터 바이트 변환 실시
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError{
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+            @Override
+            public byte[] getBody() {
+                try {
+                    if (requestBody != null && requestBody.length()>0 && !requestBody.equals("")){
+                        return requestBody.getBytes("utf-8");
+                    }
+                    else {
+                        return null;
+                    }
+                } catch (UnsupportedEncodingException uee) {
+                    return null;
+                }
+            }
+        };
+        request.setShouldCache(false);
+        queue.add(request);
+    }
+
+    public void requestCreatePost(final String url){
+        final RequestQueue queue = Volley.newRequestQueue(this);
+
+        String newUrl = MakeNewUrl(url);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                newUrl,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(RequestActivity.this, response, Toast.LENGTH_SHORT).show();
                     }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(RequestActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-        );
-        queue.add(stringRequest);
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error.getMessage());
+            }
+        });
 
+        queue.add(stringRequest);
     }
 
     //xml Id를 각각 변수에 집어넣는 함수..
@@ -367,10 +427,22 @@ public class RequestActivity extends AppCompatActivity {
         return period;
     }
 
-    private String MakeNewUrl(String url){
-        return url + "?title=" + title + "&address=" + address + "&age=" + GetAge() + "&gender=" + GetGender() + "&period=" + GetPeriod() + "&details=" + detail;
+    private JSONObject MakeJsonPost(){
+        JSONObject jsonObject = new JSONObject();
+        try{
+            jsonObject.put("title",title);
+            jsonObject.put("address",address);
+            jsonObject.put("age",GetAge());
+            jsonObject.put("gender",GetGender());
+            jsonObject.put("period",GetPeriod());
+            jsonObject.put("details",detail);
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+        return jsonObject;
     }
 
-
-
+    private String MakeNewUrl(String url){
+        return url + "?title=" + title + "&address=" + address + "&age=" + GetAge() + "&gender=" + GetGender() + "&period=" + GetPeriod() + "&details" + detail;
+    }
 }
