@@ -20,10 +20,21 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        try {
+            // handOveredActivity = 현재 액티비티의 이전 액티비티
+            // 이전 액티비티에서 ID 등의 정보를 얻어오는 코드. 성공 & 실패.
+            Intent handOveredActivity = getIntent();
+            id = handOveredActivity.getStringExtra("Id");
+        }finally {
+            Toast.makeText(this, "아이디 가져옴 :" + id, Toast.LENGTH_SHORT).show();
+        }
 
         ListView postListView = findViewById(R.id.mainActivity_post_list);
 
@@ -51,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), (i+1)+"번째 글.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, PostActivity.class);
+                intent.putExtra("Id",id);
                 startActivity(intent);
                 //데이터베이스 관련된 코드 추가예정
                 //데이터베이스 관련된 코드 추가예정
@@ -66,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ChatListActivity.class);
+                intent.putExtra("Id",id);
                 startActivity(intent);
             }
         });
@@ -73,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,SettingActivity.class);
+                intent.putExtra("Id",id);
                 startActivity(intent);
             }
         });
@@ -80,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                intent.putExtra("Id",id);
                 startActivity(intent);
             }
         });
@@ -88,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Intent intent = new Intent(MainActivity.this,RequestActivity.class);
                 Intent intent = new Intent(MainActivity.this,RequestActivity.class);
+                intent.putExtra("Id",id);
                 startActivity(intent);
             }
         });

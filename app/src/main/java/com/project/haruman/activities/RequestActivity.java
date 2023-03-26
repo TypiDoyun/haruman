@@ -2,6 +2,7 @@ package com.project.haruman.activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -34,6 +35,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RequestActivity extends AppCompatActivity {
+
+    private String id;
 
     private View button_upload;
     private EditText edittext_title;
@@ -70,6 +73,16 @@ public class RequestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
+
+        try {
+            // handOveredActivity = 현재 액티비티의 이전 액티비티
+            // 이전 액티비티에서 ID 등의 정보를 얻어오는 코드. 성공 & 실패.
+            Intent handOveredActivity = getIntent();
+            id = handOveredActivity.getStringExtra("Id");
+        }finally {
+            Toast.makeText(this, "아이디 가져옴 :" + id, Toast.LENGTH_SHORT).show();
+        }
+
         String url = "http://25.44.102.226:3000/requestCreatePost";
 
         this.UpdateDateValue(); // 154번 줄
@@ -81,7 +94,7 @@ public class RequestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 requestCreatePost_JSON(url);
-                //finish();
+                finish();
             }
         });
 

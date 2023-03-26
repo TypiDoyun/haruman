@@ -20,12 +20,23 @@ import java.util.ArrayList;
 
 public class OwnPostListActivity extends AppCompatActivity {
 
+    private String id;
+
     Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_own_post_list);
+
+        try {
+            // handOveredActivity = 현재 액티비티의 이전 액티비티
+            // 이전 액티비티에서 ID 등의 정보를 얻어오는 코드. 성공 & 실패.
+            Intent handOveredActivity = getIntent();
+            id = handOveredActivity.getStringExtra("Id");
+        }finally {
+            Toast.makeText(this, "아이디 가져옴 :" + id, Toast.LENGTH_SHORT).show();
+        } //intent.putExtra("Id",id);
 
         backBtn = findViewById(R.id.ownPostListActivity_button_back);
 
@@ -46,6 +57,7 @@ public class OwnPostListActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), (i + 1) + "번째 글임.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(OwnPostListActivity.this, PostActivity.class);
+                intent.putExtra("Id",id);
                 startActivity(intent);
                 //데이터베이스 관련된 코드 추가예정
                 //데이터베이스 관련된 코드 추가예정
